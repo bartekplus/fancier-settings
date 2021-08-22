@@ -1,0 +1,29 @@
+{
+  "env": {
+    "browser": true,
+    "webextensions": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "prettier"],
+  "plugins": ["prettier"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "sourceType": "module",
+
+    "ecmaVersion": 11
+  },
+  "rules": {
+    "no-var" : 1,
+    "prefer-const": 1,
+    "eqeqeq": 1,
+    "no-extra-bind": 1,
+    "no-implicit-coercion": 1,
+    "strict": 1,
+    "prettier/prettier": ["error"]
+  }
+}
