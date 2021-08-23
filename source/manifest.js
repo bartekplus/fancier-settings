@@ -154,10 +154,6 @@ const manifest = {
       options: [["hot", "Hot and yummy"], ["cold"]],
     },
   ],
-  alignment: [
-    ["username", "password"],
-    ["noti_volume", "sound_volume"],
-  ],
 };
 
 export { manifest };

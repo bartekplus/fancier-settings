@@ -57,7 +57,6 @@ object contains the following properties:
 
 * `name`: Name of the manifest
 * `icon`: Filename of the favicon to show for the options tab in chrome
-* `alignment` _(optional)_: _WIP - not sure how to explain this yet_
 * `settings`:
 
   An array containing a "flattened" list of settings.  Each element in this array describes one setting. All setting objects, 

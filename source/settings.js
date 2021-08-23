@@ -113,10 +113,5 @@ window.addEventListener("DOMContentLoaded", function () {
   myButton.addEvent('action', function () {
     alert('You clicked me!');
   });
-
-  settings.align([
-    username,
-    password
-  ]);
   */
 });
