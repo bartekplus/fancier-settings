@@ -11,8 +11,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
     //-- register 'action' event callback on the `myButton` setting from ./manifest:78
     settings.manifest.removeKey.addEvent("action", function () {
-      let removeIds = [];
-      let options = {};
+      const removeIds = [];
+      const options = {};
 
       [].slice
         .call(settings.manifest.storedKeys.element.options)
@@ -32,12 +32,12 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     //-- register 'modal_done' event callback on the `addKey` setting from ./manifest:17
-    settings.manifest.addKey.addEvent("modal_done", function () {
+    settings.manifest.addKey.addEvent("modal_done", async function () {
       const storage = new Store("settings");
-      const keyName = storage.get("keyName");
-      const keyText = storage.get("keyText");
+      const keyName = await storage.get("keyName");
+      const keyText = await storage.get("keyText");
 
-      let options = {};
+      const options = {};
 
       //-- error if keyName or keyText is empty
       if (!keyName || !keyText) {
@@ -45,7 +45,7 @@ window.addEventListener("DOMContentLoaded", function () {
       }
 
       //-- add key to encrypted storage
-      let newKey = {
+      const newKey = {
         email: keyName,
         id: keyName,
       };
