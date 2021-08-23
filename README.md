@@ -93,14 +93,10 @@ object contains the following properties:
 
 #### Using Settings Values
 
-All values in the settings page are automatically persisted via `localStorage` objects with the prefix of 
-`store.settings.` (e.g. `store.settings.myButton`). You can retrieve the values via javascript, operate on them 
-and ultimately store your chrome extension settings via [`chrome.storage`](https://developer.chrome.com/extensions/storage) 
-for use in your extension.
+All values in the settings page are automatically persisted via [`chrome.storage`](https://developer.chrome.com/extensions/storage) if it is available or `localStorage` otherwise. By default `chrome.storage.sync` interface is used, this can be changed in (`source/lib/store.js`), by setting `useLocalBackend` to `false`. All keys have the prefix of `store.settings.` (e.g. `store.settings.myButton`). You can retrieve the values via javascript, operate on them and ultimately store your chrome extension settings via `Store` object(`new Store("settings")`) or [`chrome.storage`](https://developer.chrome.com/extensions/storage) for use in your extension.
 
 In the sample code of this repo, this logic resides in the [`settings`](#settings-initialization) file as well but could 
 just as easily be factored out.
-
 
 How To Use **(WIP)**
 ----------
